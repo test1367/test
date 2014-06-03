@@ -2,5 +2,66 @@
 <head></head>
 <body>
   test
+  <button onclick="onclickFn()">Button</button>
+  <br>
+  <button onclick="authFn()">Auth</button>
+
+  <  <script>
+      //alert(window.location)
+      var XMLHttpRequest;
+
+      if (typeof window !== 'undefined' && typeof window.XMLHttpRequest !== 'undefined'){
+          XMLHttpRequest = window.XMLHttpRequest;
+      }
+
+      function getParam(param){
+          param = param.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+          var regex = new RegExp( "[\\?&]"+param+"=([^&#\/]*)" );
+          var results = regex.exec( window.location.href );
+          return results === null ? null : results[1];
+      }
+      var code = getParam('code');
+      if (code){
+          var data = {
+              client_id: '86645f7b6b53b7856da0',
+              client_secret: '8096c671a42ef93a7a7a8e7f5a458b4fb6c09e20',
+              code: code
+          }
+
+          var xhr = new XMLHttpRequest();
+          //xhr.dataType = "json"
+
+          xhr.open('POST', 'https://github.com/login/oauth/access_token');//?code='+code+'&client_id='+data.client_id+'&client_secret='+data.client_secret);
+          xhr.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                  var responseHeaders = xhr.getAllResponseHeaders();
+                  //console.log(responseHeaders);
+              }
+          };
+          //xhr.setRequestHeader('Accept','application/vnd.github.raw');
+          xhr.setRequestHeader('Accept','application/json');
+          xhr.setRequestHeader('Content-Type','application/json');
+
+          //xhr.setRequestHeader('Access-Control-Allow-Origin', '*')
+          xhr.send(JSON.stringify(data));
+          //xhr.send();
+      }
+
+      /*if ("onhashchange" in window) {
+          alert("The browser supports the hashchange event!");
+      }*/
+
+      /*window.onhashchange = function(){
+        console.log('!!!!!')
+      }*/
+      /*function qwe(){console.log('qwe')}
+      window.addEventListener("hashchange", qwe, true);*/
+
+      function authFn(){
+          location.href = "https://github.com/login/oauth/authorize?client_id=86645f7b6b53b7856da0";
+      }
+
+  </script>
+
 </body>
 </html>
