@@ -30,25 +30,26 @@
           var xhr = new XMLHttpRequest();
           //xhr.dataType = "json"
 
-          xhr.open('POST', 'https://github.com/login/oauth/access_token');//?code='+code+'&client_id='+data.client_id+'&client_secret='+data.client_secret);
+          //xhr.open('POST', 'https://github.com/login/oauth/access_token');//?code='+code+'&client_id='+data.client_id+'&client_secret='+data.client_secret);
+          xhr.open('GET', 'token.php?code=' + code, true)
           xhr.onreadystatechange = function () {
               if (this.readyState == 4) {
-                  var responseHeaders = xhr.getAllResponseHeaders();
-                  //console.log(responseHeaders);
+                  //var responseHeaders = xhr.getAllResponseHeaders();
+                  console.log(this.responseText);
               }
           };
           //xhr.setRequestHeader('Accept','application/vnd.github.raw');
-          xhr.setRequestHeader('Accept','application/json');
-          xhr.setRequestHeader('Content-Type','application/json');
+          //xhr.setRequestHeader('Accept','application/json');
+          //xhr.setRequestHeader('Content-Type','application/json');
           
-          xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://test9541.github.io');
+          //xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://test9541.github.io');
           //xhr.setRequestHeader('Access-Control-Max-Age', '3628800');
-          xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+          //xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
           
           //xhr.setRequestHeader('Access-Control-Allow-Headers', 'X-PINGOTHER')
           //xhr.setRequestHeader('Access-Control-Allow-Origin', '*')
-          xhr.send(JSON.stringify(data));
-          //xhr.send();
+          //xhr.send(JSON.stringify(data));
+          xhr.send();
       }
 
       /*if ("onhashchange" in window) {
