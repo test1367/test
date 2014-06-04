@@ -5,7 +5,7 @@
 
   <button onclick="authFn()">Auth</button>
 
-  <  <script>
+ <script>
       //alert(window.location)
       var XMLHttpRequest;
 
@@ -41,6 +41,9 @@
           xhr.setRequestHeader('Accept','application/json');
           xhr.setRequestHeader('Content-Type','application/json');
 
+          xhr.setRequestHeader('Access-Control-Allow-Methods', '*');
+          xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+          xhr.setRequestHeader('Access-Control-Allow-Headers', '*')
           //xhr.setRequestHeader('Access-Control-Allow-Origin', '*')
           xhr.send(JSON.stringify(data));
           //xhr.send();
