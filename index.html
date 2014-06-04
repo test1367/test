@@ -43,7 +43,7 @@
           xhr.setRequestHeader('X-PINGOTHER', 'pingpong');
           
           xhr.setRequestHeader('Access-Control-Allow-Methods', 'http://test9541.github.io');
-          xhr.setRequestHeader('Access-Control-Allow-Origin', 'GET, POST, OPTIONS');
+          xhr.setRequestHeader('Access-Control-Allow-Origin', 'OPTIONS');
           xhr.setRequestHeader('Access-Control-Allow-Headers', 'X-PINGOTHER')
           //xhr.setRequestHeader('Access-Control-Allow-Origin', '*')
           xhr.send(JSON.stringify(data));
