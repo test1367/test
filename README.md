@@ -1,6 +1,6 @@
 # Qwe
 
-* [Qwe](#qweq)
+* [Qe](#qwe)
     * [Qwe-1](#qw)
     * [Qwe-24](#qwe-2)
     * [Qwe-3](#qwe-3)
