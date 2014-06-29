@@ -1,8 +1,8 @@
 # Qwe
 
-* [Qwe](#qwe)
-    * [Qwe-1](#qwe-1)
-    * [Qwe-2](#qwe-2)
+* [Qwe](#qweq)
+    * [Qwe-1](#qw)
+    * [Qwe-24](#qwe-2)
     * [Qwe-3](#qwe-3)
 
 ## Qwe-1
